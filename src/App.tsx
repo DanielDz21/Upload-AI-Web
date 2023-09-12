@@ -27,14 +27,24 @@ export function App() {
       <main className='flex-1 p-6 flex gap-6'>
         <div className='flex flex-col flex-1 gap-4'>
           <div className='grid grid-rows-2 gap-4 flex-1'>
-            <Textarea className='resize-none p-4 leading-relaxed' placeholder='Inclua o prompt para a IA...' />
-            <Textarea className='resize-none p-4 leading-relaxed' placeholder='Resultado gerado pela IA...' readOnly />
+            <Textarea
+              className='resize-none p-4 leading-relaxed'
+              placeholder='Inclua o prompt para a IA...'
+            />
+            <Textarea
+              className='resize-none p-4 leading-relaxed'
+              placeholder='Resultado gerado pela IA...'
+              readOnly
+            />
           </div>
 
           <p className='text-sm text-muted-foreground'>
-            Lembre-se: você pode utilizar a variável <code className='text-orange-400'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+            Lembre-se: você pode utilizar a variável
+            <code className='text-orange-400'>{`{transcription}`}</code>
+            no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
           </p>
         </div>
+
         <aside className='w-80 space-y-6'>
           <form className='space-y-6'>
             <label
@@ -78,11 +88,7 @@ export function App() {
                   <SelectItem value='description'>Descrição do Youtube</SelectItem>
                 </SelectContent>
               </Select>
-              <span className='block text-xs text-muted-foreground italic'>
-                Você poderá customizar essa opção em breve
-              </span>
             </div>
-
 
             <div className='space-y-2'>
               <Label>Modelo</Label>
@@ -94,7 +100,7 @@ export function App() {
                   <SelectItem value='gpt3.5'>GPT 3.5-turbo 16k</SelectItem>
                 </SelectContent>
               </Select>
-              <span className='block text-xs text-muted-foreground italic'>
+              <span className='block text-sm text-muted-foreground italic'>
                 Você poderá customizar essa opção em breve
               </span>
             </div>
@@ -104,8 +110,7 @@ export function App() {
             <div className='space-y-4'>
               <Label>Temperatura</Label>
               <Slider min={0} max={1} step={0.1} />
-
-              <span className='block text-xs text-muted-foreground italic leading-relaxed'>
+              <span className='block text-sm text-muted-foreground italic leading-relaxed'>
                 Valores mais altos tendem a deixar o resultado mais criativo e com possíveis erros.
               </span>
             </div>
