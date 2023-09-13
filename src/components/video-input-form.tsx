@@ -121,7 +121,7 @@ export function VideoInputForm({ onVideoUploaded }: VideoInputFormProps) {
                 data-success={status === 'done'}
                 disabled={status !== 'idle'}
                 type='submit'
-                className='w-full data-[success]:bg-emerald-400'
+                className='w-full data-[success=true]:bg-emerald-400'
             >
                 {status === 'idle' ? (
                     <>
